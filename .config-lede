@@ -1,0 +1,49 @@
+CONFIG_TARGET_rockchip=y
+CONFIG_TARGET_rockchip_armv8=y
+CONFIG_TARGET_rockchip_armv8_DEVICE_radxa_e20c=y
+CONFIG_PACKAGE_bash=y
+# CONFIG_PACKAGE_coremark is not set
+# CONFIG_PACKAGE_ddns-scripts is not set
+# CONFIG_PACKAGE_ddns-scripts-services is not set
+# CONFIG_PACKAGE_ddns-scripts_aliyun is not set
+# CONFIG_PACKAGE_ddns-scripts_dnspod is not set
+# CONFIG_PACKAGE_etherwake is not set
+# CONFIG_PACKAGE_haveged is not set
+CONFIG_PACKAGE_kmod-inet-diag=y
+# CONFIG_PACKAGE_kmod-nf-conntrack-netlink is not set
+CONFIG_PACKAGE_libgmp=y
+# CONFIG_PACKAGE_libhavege is not set
+# CONFIG_PACKAGE_libpcre is not set
+CONFIG_PACKAGE_libreadline=y
+CONFIG_PACKAGE_libruby=y
+CONFIG_PACKAGE_libyaml=y
+# CONFIG_PACKAGE_luci-app-accesscontrol is not set
+# CONFIG_PACKAGE_luci-app-arpbind is not set
+# CONFIG_PACKAGE_luci-app-autoreboot is not set
+# CONFIG_PACKAGE_luci-app-ddns is not set
+# CONFIG_PACKAGE_luci-app-filetransfer is not set
+# CONFIG_PACKAGE_luci-app-nlbwmon is not set
+CONFIG_PACKAGE_luci-app-openclash=y
+# CONFIG_PACKAGE_luci-app-upnp is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+# CONFIG_PACKAGE_luci-lib-fs is not set
+CONFIG_PACKAGE_luci-theme-argon=y
+# CONFIG_PACKAGE_miniupnpd is not set
+# CONFIG_PACKAGE_nlbwmon is not set
+# CONFIG_PACKAGE_openssl-util is not set
+CONFIG_PACKAGE_ruby=y
+CONFIG_PACKAGE_ruby-bigdecimal=y
+CONFIG_PACKAGE_ruby-date=y
+CONFIG_PACKAGE_ruby-digest=y
+CONFIG_PACKAGE_ruby-enc=y
+CONFIG_PACKAGE_ruby-pstore=y
+CONFIG_PACKAGE_ruby-psych=y
+CONFIG_PACKAGE_ruby-stringio=y
+CONFIG_PACKAGE_ruby-yaml=y
+CONFIG_PACKAGE_unzip=y
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd-alt is not set
+# CONFIG_PACKAGE_wget-ssl is not set
+CONFIG_RUBY_ENABLE_YJIT=y
