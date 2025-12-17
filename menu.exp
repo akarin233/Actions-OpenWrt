@@ -1,0 +1,22 @@
+#!/usr/bin/expect
+set env(TERM) "xterm"
+
+spawn make menuconfig
+expect -timeout 60
+send "\t"
+expect -timeout 1
+send "\t"
+expect -timeout 1
+send "\t"
+expect -timeout 1
+send "\r"
+expect -timeout 1
+send "\r"
+expect -timeout 1
+send "\r"
+expect -timeout 1
+send "\t"
+expect -timeout 1
+send "\r"
+
+expect eof
