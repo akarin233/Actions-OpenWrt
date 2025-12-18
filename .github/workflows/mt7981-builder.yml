@@ -1,4 +1,4 @@
-name: MT7981 Builder
+name: MT7981
 
 on:
   repository_dispatch:
