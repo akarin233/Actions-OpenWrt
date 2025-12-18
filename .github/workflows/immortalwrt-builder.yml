@@ -47,9 +47,12 @@ jobs:
         export FORCE_UNSAFE_CONFIGURE=1
         export KCONFIG_NOTIMESTAMP=1
         cd openwrt
+        cat .config | grep openclash
         ./scripts/feeds update -a && ./scripts/feeds install -a
         chmod +x memu.exp && ./memu.exp
+        cat .config | grep openclash
         make download -j8
+        cat .config | grep openclash
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
