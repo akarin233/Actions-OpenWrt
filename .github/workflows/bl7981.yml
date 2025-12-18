@@ -33,6 +33,7 @@ jobs:
     - name: Clone source code
       working-directory: /mnt/workdir
       run: |
+        df -hT
         git clone --depth=1 --single-branch --branch=$REPO_BRANCH $REPO_URL bl-mt798x
         ln -sf /mnt/workdir/bl-mt798x $GITHUB_WORKSPACE/bl-mt798x
 
@@ -44,6 +45,10 @@ jobs:
         SOC=mt7981 BOARD=nokia_ea0326gmp ./build.sh
         echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
 
     - name: Organize files
       id: organize
