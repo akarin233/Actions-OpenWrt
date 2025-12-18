@@ -27,14 +27,14 @@ jobs:
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone Asia/Shanghai
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
+        sudo mkdir -p /mnt/workdir
+        sudo chown $USER:$GROUPS /mnt/workdir
 
     - name: Clone source code
-      working-directory: /workdir
+      working-directory: /mnt/workdir
       run: |
         git clone --depth=1 --single-branch --branch=$REPO_BRANCH $REPO_URL bl-mt798x
-        ln -sf /workdir/bl-mt798x $GITHUB_WORKSPACE/bl-mt798x
+        ln -sf /mnt/workdir/bl-mt798x $GITHUB_WORKSPACE/bl-mt798x
 
     - name: Compile the firmware
       id: compile
