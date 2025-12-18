@@ -35,15 +35,15 @@ jobs:
     - name: Clone source code
       working-directory: /workdir
       run: |
-        git clone --depth=1 --single-branch --branch=$REPO_BRANCH $REPO_URL openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        cd openwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
+        git clone --depth=1 --single-branch --branch=$REPO_BRANCH $REPO_URL immortalwrt
+        ln -sf /workdir/immortalwrt $GITHUB_WORKSPACE/immortalwrt
+        cd immortalwrt && ./scripts/feeds update -a && ./scripts/feeds install -a
 
     - name: Download package
       id: package
       run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        cd openwrt
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE immortalwrt/.config
+        cd immortalwrt
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -52,8 +52,8 @@ jobs:
     - name: Compile the firmware
       id: compile
       run: |
-        cd openwrt
-        make -j$(nproc) V=s || make -j1 V=s || exit 1
+        cd immortalwrt
+        make -j$(nproc) || make -j1 V=s || exit 1
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
@@ -67,7 +67,7 @@ jobs:
       id: organize
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
-        cd openwrt/bin/targets/*/*
+        cd immortalwrt/bin/targets/*/*
         cp ../../../../.config config
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
@@ -77,5 +77,5 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: ${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
