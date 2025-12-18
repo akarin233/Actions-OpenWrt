@@ -26,4 +26,7 @@ jobs:
 
     - name: Run bench
       run: |
-        yes "" | bash <(curl -sL https://run.NodeQuality.com)
+        df -hT
+        lsblk -lf
+        lscpu
+        free -m
