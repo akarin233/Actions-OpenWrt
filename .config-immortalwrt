@@ -48,6 +48,7 @@ CONFIG_TARGET_rockchip=y
 # CONFIG_TARGET_siflower is not set
 # CONFIG_TARGET_starfive is not set
 # CONFIG_TARGET_omap is not set
+# CONFIG_TARGET_uml is not set
 # CONFIG_TARGET_zynq is not set
 # CONFIG_TARGET_x86 is not set
 CONFIG_TARGET_rockchip_armv8=y
