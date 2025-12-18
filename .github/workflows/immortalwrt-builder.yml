@@ -49,7 +49,7 @@ jobs:
         cd openwrt
         cat .config | grep openclash
         ./scripts/feeds update -a && ./scripts/feeds install -a
-        chmod +x memu.exp && ./memu.exp
+        make defconfig
         cat .config | grep openclash
         make download -j8
         cat .config | grep openclash
