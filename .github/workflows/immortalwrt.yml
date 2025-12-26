@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
-  CONFIG_FILE: .config-e20c
+  CONFIG_FILE: .config-x86
 
 jobs:
   build:
