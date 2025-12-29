@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
-  CONFIG_FILE: .config-x86
+  CONFIG_FILE: .config-r3s
 
 jobs:
   build:
