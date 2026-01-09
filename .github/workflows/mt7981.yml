@@ -7,7 +7,7 @@ on:
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
-  CONFIG_FILE: .config-0326
+  CONFIG_FILE: .config-xr30
 
 jobs:
   build:
