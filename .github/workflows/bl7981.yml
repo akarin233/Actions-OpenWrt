@@ -43,6 +43,7 @@ jobs:
         cd bl-mt798x
         SOC=mt7981 BOARD=cmcc_xr30 ./build.sh
         SOC=mt7981 BOARD=nokia_ea0326gmp ./build.sh
+        SOC=mt7986 BOARD=redmi_ax6000 MULTI_LAYOUT=1 ./build.sh
         echo "FILE_DATE=$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
