@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/chasey-dev/immortalwrt-mt798x-rebase
+  REPO_URL: https://github.com/akarin233/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   CONFIG_FILE: .config-ax6000
 
