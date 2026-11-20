@@ -1,4 +1,4 @@
-name: MT7981
+name: XR30
 
 on:
   repository_dispatch:
