@@ -1,4 +1,4 @@
-name: MT7981
+name: AX6000-2512
 
 on:
   repository_dispatch:
