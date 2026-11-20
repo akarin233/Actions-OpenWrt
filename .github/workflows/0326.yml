@@ -1,4 +1,4 @@
-name: MT7981
+name: 0326
 
 on:
   repository_dispatch:
